@@ -11,7 +11,7 @@ A Flutter package for iOS and Android for Selecting Human Body Part.
 
 First, add `human_anatomy` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
-Second, add asset folder at the root your project
+Second, add assets folder at the root your project
 
 Then Add the flowing line in your pubspec.yaml like other image file
 
