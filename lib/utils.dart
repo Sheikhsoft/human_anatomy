@@ -22,10 +22,10 @@ class Utils {
   }
 }
 
-class TopPrograssBar extends StatelessWidget {
+class TopProgressBar extends StatelessWidget {
   final String progressBarImagePath;
 
-  TopPrograssBar({Key key, this.progressBarImagePath}) : super(key: key);
+  TopProgressBar({Key key, this.progressBarImagePath}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
