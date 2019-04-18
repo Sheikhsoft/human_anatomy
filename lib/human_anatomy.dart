@@ -71,20 +71,18 @@ class _HumanAnatomyState extends State<HumanAnatomy> {
     );
   }
   // Added Color Control ,  prepend Directory To Images And No Need To Add SvgName Auto Added
-  Widget bodyPart(String svgPath, double marginTop, double marginRight, double marginLeft, double height , {   bool addAssetsImages : true , String svgName : '' , Color svgTouchColor : Colors.redAccent }) {
+  Widget bodyPart(String svgPath, double marginTop, double marginRight, double marginLeft, double height , { String svgName : '' , Color svgTouchColor : Colors.redAccent }) {
     Color _svgColor = _bodyPartList.contains(svgName) ? svgTouchColor: null;
    // Auto Generate svgName
-    if(addAssetsImages && svgName == '' ) {
+    if(svgName == '' ) {
       List svgNameP = svgPath.split('_');
       String svgNameP1 = svgNameP[0];
-      if(svgNameP.length == 1 ){
-        svgName = _firstLetterUpperCase(svgNameP1.split('.')[0]);
-      }else{
-        svgName = _firstLetterUpperCase(svgNameP1) + _firstLetterUpperCase(svgNameP[1].split('.')[0]);
-      }
+      svgName = svgNameP.length == 1
+          ? _firstLetterUpperCase(svgNameP1.split('.')[0])
+          : _firstLetterUpperCase(svgNameP1) + _firstLetterUpperCase(svgNameP[1].split('.')[0]);
     }
     // If You Want To Change Directory Of Images You Can Edit this Line
-    svgPath = addAssetsImages ? 'assets/images-human-anatomy/' + svgPath : svgPath;
+    svgPath = svgName == '' ? svgPath  :  'assets/images-human-anatomy/' + svgPath ;
 
     final Widget bodyPartSvg = new SvgPicture.asset(svgPath, semanticsLabel: svgName, color: _svgColor);
     return Container(
