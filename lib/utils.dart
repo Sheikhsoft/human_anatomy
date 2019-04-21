@@ -4,28 +4,29 @@ import 'package:flutter/material.dart';
 class Utils {
   showMyDialog(context, String text) {
     // flutter defined function
-
     showDialog(
         context: context,
         // return object of type AlertDialog
-        child: new CupertinoAlertDialog(
-          title: new Text("Massage"),
-          content: new Text(text),
-          actions: <Widget>[
-            new FlatButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: new Text("OK"))
-          ],
-        ));
+        builder:(context){
+          return new CupertinoAlertDialog(
+            title: new Text("Massage"),
+            content: new Text(text),
+            actions: <Widget>[
+              new FlatButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: new Text("OK"))
+            ],
+          );
+        });
   }
 }
 
-class TopPrograssBar extends StatelessWidget {
+class TopProgressBar extends StatelessWidget {
   final String progressBarImagePath;
 
-  TopPrograssBar({Key key, this.progressBarImagePath}) : super(key: key);
+  TopProgressBar({Key key, this.progressBarImagePath}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(

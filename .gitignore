@@ -1,3 +1,6 @@
+.idea/
+*.ini
+
 .DS_Store
 .dart_tool/
 

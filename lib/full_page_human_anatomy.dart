@@ -4,10 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:human_anatomy/utils.dart';
 
-import 'human_anatomy.dart';
+import 'package:human_anatomy/human_anatomy.dart';
 
 class FullPageHumanAnatomy extends StatelessWidget {
-  var _finalBodyPartList = [];
+  List<String> _finalBodyPartList = [];
   final Map mapData;
   final Widget container;
   final String title;
